@@ -43,16 +43,18 @@ class Login extends Component {
             Login
           </Text>
           <Separator height={'10'} />
+          <Separator height={'10'} />
           <Center h={'150px'}>
             <Image
               bg="#FFFFFF"
-              w={'200px'}
-              h={'132px'}
+              w={'250px'}
+              h={'202px'}
               borderRadius={'10px'}
-              source={require('../assets/login.svg')}
+              source={require('../assets/Login.png')}
             />
           </Center>
           <Separator height={'10'} />
+          <Separator height={'5'} />
           <VStack>
             <Text p={'5px'} fontSize={'12px'} color="#3E4450" textAlign="left">
               Email

@@ -46,13 +46,13 @@ class Register extends Component {
           <Center>
             <Image
               bg="#FFFFFF"
-              w={'150px'}
-              h={'150px'}
+              w={'220px'}
+              h={'220px'}
               borderRadius={'10px'}
-              source={require('../assets/register.svg')}
+              source={require('../assets/Register.png')}
             />
           </Center>
-          <Separator height={'10'} />
+          <Separator height={'5'} />
           <VStack>
             <Text p={'5px'} fontSize={'12px'} color="#3E4450" textAlign="left">
               Email
