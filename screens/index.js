@@ -8,7 +8,6 @@ import PasswordRenewed_Submitted from './passwordrenewed_submitted';
 import Register from './register';
 import OTP_Verification from './otp_verification';
 import RegisterSubmitted from './register_submitted';
-import FindLocation from './find_location';
 import FindLocation2 from './find_location2';
 import FindLocation3 from './find_location3';
 import DataSubmitted from './data_submitted';
@@ -25,7 +24,6 @@ export {
   Register,
   OTP_Verification,
   RegisterSubmitted,
-  FindLocation,
   FindLocation2,
   FindLocation3,
   DataSubmitted,

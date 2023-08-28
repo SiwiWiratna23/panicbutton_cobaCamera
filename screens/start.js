@@ -22,94 +22,14 @@ class Start extends Component {
     const { navigation } = this.props;
     return (
       <Box flex={1} bg="#FFFFFF" safeArea={true}>
-        <ScrollView px={'10px'} py={'60px'}>
-          <Center>
-            <Box
-              justifyContent="center"
-              alignItems="center"
-              flexDirection="row">
-              <Text
-                fontSize={'40px'}
-                color="#F0F1F3"
-                fontWeight="bold"
-                textAlign="center"
-                position="relative">
-                PANIC BUTTON
-              </Text>
-              <Text
-                fontSize={'25px'}
-                color="#5F687B"
-                fontWeight="bold"
-                textAlign="center"
-                zIndex={2}
-                position="absolute"
-                mt={'20px'}>
-                PANIC BUTTON
-              </Text>
-            </Box>
-            <Separator height={'5'} />
-            <Text
-              fontSize={'14px'}
-              color="#3E4450"
-              textAlign="center"
-              fontWeight="medium">
-              Sigap, Cepat, dan Tepat
-            </Text>
-            <Separator height={'2'} />
-            <Text fontSize={'14px'} color="#3E4450" textAlign="center">
-              Kami siap membantu masyarakat Sidoarjo di segala kejadian darurat
-              dimana dan kapan saja
-            </Text>
-            <Separator height={'10'} />
-            <Separator height={'5'} />
-            <Image
+        <Pressable onPress={() => navigation.navigate('Login')}>
+          <Image
               bg="#FFFFFF"
-              w={'240px'}
-              h={'247px'}
-              borderRadius={'10px'}
-              source={require('../assets/panicbutton.jpg')}
+              w={'100%'}
+              h={'100%'}
+              source={require('../assets/Screen.png')}
             />
-            <Separator height={'10'} />
-            <Separator height={'5'} />
-            <Separator height={'10'} />
-            <Pressable
-              onPress={() => navigation.navigate('Login')}>
-              <Box
-                mt={'10px'}
-                w={'120px'}
-                h={'40px'}
-                borderRadius={'11px'}
-                bg="#007DFE"
-                p={'7px'}>
-                <Text
-                  fontSize={'16px'}
-                  color="#FFFFFF"
-                  textAlign="center"
-                  fontWeight="medium">
-                  Get Started
-                </Text>
-              </Box>
-            </Pressable>
-            <Pressable
-              onPress={() => navigation.navigate('CobaCamera')}>
-              <Box
-                mt={'10px'}
-                w={'120px'}
-                h={'40px'}
-                borderRadius={'11px'}
-                bg="#007DFE"
-                p={'7px'}>
-                <Text
-                  fontSize={'16px'}
-                  color="#FFFFFF"
-                  textAlign="center"
-                  fontWeight="medium">
-                  cobaCamera
-                </Text>
-              </Box>
-            </Pressable> 
-          </Center>
-        </ScrollView>
+          </Pressable>
       </Box>
     );
   }

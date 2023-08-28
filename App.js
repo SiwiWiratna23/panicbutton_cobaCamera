@@ -14,7 +14,7 @@ import {
   Register,
   OTP_Verification,
   RegisterSubmitted,
-  FindLocation,
+  // FindLocation,
   FindLocation2,
   FindLocation3,
   // Data,
@@ -80,11 +80,11 @@ const App = () => {
             component={RegisterSubmitted}
             options={{ headerShown: false }}
           />
-          <Stack.Screen
+          {/* <Stack.Screen
             name="FindLocation"
             component={FindLocation}
             options={{ headerShown: false }}
-          /> 
+          />  */}
           <Stack.Screen
             name="FindLocation2"
             component={FindLocation2}

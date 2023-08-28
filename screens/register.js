@@ -14,6 +14,9 @@ import {
   Divider,
   Center,
 } from 'native-base';
+import {
+  ImageBackground,StyleSheet 
+} from "react-native";
 import { Ionicons } from '@expo/vector-icons';
 import Separator from '../components/separator';
 
@@ -33,26 +36,31 @@ class Register extends Component {
   render() {
     const { navigation } = this.props;
     return (
-      <Box flex={1} bg="#FFFFFF" safeArea={true}>
-        <ScrollView px={'20px'} py={'60px'}>
+      <Box flex={1} safeArea={true}>
+          <ImageBackground
+           source={require('../assets/LoginRegister.jpg')}
+           style={styles.imageBackground}>
+          </ImageBackground>
+        <ScrollView
+          mt={'250px'}
+          bg="#FFFFFF"
+          borderTopRadius={"30px"}
+          shadow="9"
+          px={'20px'} py={'20px'}
+        >
+          <VStack space={"2px"}>
           <Text
-            fontSize={'20px'}
+            fontSize={'26px'}
             color="#3E4450"
-            textAlign="center"
-            fontWeight="Bold">
-            Register
+            textAlign="left"
+            fontWeight="bold">
+            Daftar
           </Text>
-          <Separator height={'5'} />
-          <Center>
-            <Image
-              bg="#FFFFFF"
-              w={'220px'}
-              h={'220px'}
-              borderRadius={'10px'}
-              source={require('../assets/Register.png')}
-            />
-          </Center>
-          <Separator height={'5'} />
+          <Text fontSize={'12px'} color="#3E4450" textAlign="left">
+          Daftar untuk melanjutkan
+          </Text>
+          </VStack>
+          <Separator height={'8'} />
           <VStack>
             <Text p={'5px'} fontSize={'12px'} color="#3E4450" textAlign="left">
               Nama
@@ -100,41 +108,49 @@ class Register extends Component {
               }
             />
           </VStack>
+          <Separator height={'8'} />
+          <Pressable onPress={() => navigation.navigate('OTP_Verification')}>
+            <Box
+              mt={'10px'}
+              w={'100%'}
+              h={'42px'}
+              borderRadius={'11px'}
+              bg="#007DFE"
+              p={'7px'}>
+              <Text
+                fontSize={'16px'}
+                color="#FFFFFF"
+                textAlign="center"
+                fontWeight="medium">
+                Daftar
+              </Text>
+            </Box>
+          </Pressable>
           <Separator height={'5'} />
           <HStack space={'5px'} alignSelf="center">
             <Text fontSize={'12px'} color="#3E4450" textAlign="center">
-              Sudah punya akun?
+            Sudah mempunyai akun? 
             </Text>
             <Pressable onPress={() => navigation.navigate('Login')}>
               <Text fontSize={'12px'} color="#007DFE" textAlign="center">
-                Login
+              Masuk
               </Text>
             </Pressable>
           </HStack>
-          <Separator height={'6'} />
-          <Center>
-            <Pressable onPress={() => navigation.navigate('OTP_Verification')}>
-              <Box
-                mt={'10px'}
-                w={'148px'}
-                h={'42px'}
-                borderRadius={'11px'}
-                bg="#007DFE"
-                p={'7px'}>
-                <Text
-                  fontSize={'16px'}
-                  color="#FFFFFF"
-                  textAlign="center"
-                  fontWeight="medium">
-                  Selanjutnya
-                </Text>
-              </Box>
-            </Pressable>
-          </Center>
         </ScrollView>
       </Box>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  imageBackground: {
+    flex: 1,
+    resizeMode: 'cover',
+    justifyContent: 'center',
+    width: '100%',
+    height: '896%',
+  },
+});
 
 export default Register;

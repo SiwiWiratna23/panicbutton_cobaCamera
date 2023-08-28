@@ -14,6 +14,9 @@ import {
   Divider,
   Center,
 } from 'native-base';
+import {
+  ImageBackground,StyleSheet 
+} from "react-native";
 import { Ionicons } from '@expo/vector-icons';
 import Separator from '../components/separator';
 
@@ -33,28 +36,30 @@ class Login extends Component {
   render() {
     const { navigation } = this.props;
     return (
-      <Box flex={1} bg="#FFFFFF" safeArea={true}>
-        <ScrollView px={'20px'} py={'60px'}>
-          <Text
-            fontSize={'20px'}
-            color="#3E4450"
-            textAlign="center"
-            fontWeight="Bold">
-            Login
-          </Text>
+      <Box flex={1} safeArea={true}>
+        <ImageBackground
+          source={require('../assets/LoginRegister.jpg')}
+          style={styles.imageBackground}>
+        </ImageBackground>
+        <ScrollView
+          mt={'250px'}
+          bg="#FFFFFF"
+          borderTopRadius={"30px"}
+          shadow="9"
+          px={'20px'} py={'20px'}>
+          <VStack space={"2px"}>
+            <Text
+              fontSize={'26px'}
+              color="#3E4450"
+              textAlign="left"
+              fontWeight="bold">
+              Masuk
+            </Text>
+            <Text fontSize={'12px'} color="#3E4450" textAlign="left">
+            Masuk untuk melanjutkan
+            </Text>
+          </VStack>
           <Separator height={'10'} />
-          <Separator height={'10'} />
-          <Center h={'150px'}>
-            <Image
-              bg="#FFFFFF"
-              w={'250px'}
-              h={'202px'}
-              borderRadius={'10px'}
-              source={require('../assets/Login.png')}
-            />
-          </Center>
-          <Separator height={'10'} />
-          <Separator height={'5'} />
           <VStack>
             <Text p={'5px'} fontSize={'12px'} color="#3E4450" textAlign="left">
               No Telepon
@@ -93,28 +98,10 @@ class Login extends Component {
             />
           </VStack>
           <Separator height={'5'} />
-          <HStack space={'5px'} alignSelf="center">
-            <Text fontSize={'12px'} color="#3E4450" textAlign="center">
-              Belum punya akun?
-            </Text>
-            <Pressable onPress={() => navigation.navigate('Register')}>
-              <Text fontSize={'12px'} color="#007DFE" textAlign="center">
-                Register
-              </Text>
-            </Pressable>
-          </HStack> 
-          <Separator height={'1'} />
-          <Pressable onPress={() => navigation.navigate('ForgotPassword')}>
-            <Text fontSize={'12px'} color="#ACACAC" textAlign="center">
-              Lupa password?
-            </Text>
-          </Pressable>
-          <Separator height={'10'} />
-          <Center>
             <Pressable onPress={() => navigation.navigate('LoginSucced_Submitted')}>
               <Box
                 mt={'10px'}
-                w={'168px'}
+                w={'100%'}
                 h={'42px'}
                 borderRadius={'11px'}
                 bg="#007DFE"
@@ -124,15 +111,53 @@ class Login extends Component {
                   color="#FFFFFF"
                   textAlign="center"
                   fontWeight="medium">
-                  Login
+                  Masuk
                 </Text>
               </Box>
             </Pressable>
-          </Center>
+            <Separator height={'6'} />
+            <Center>
+              <Pressable onPress={() => navigation.navigate('ForgotPassword')}>
+                <Text fontSize={'12px'} color="#ACACAC">
+                  Lupa password?
+                </Text>
+              </Pressable> 
+            </Center>
+            <Separator height={'5'} />
+            <Pressable onPress={() => navigation.navigate('Register')}>
+              <Box
+                mt={'10px'}
+                w={'100%'}
+                h={'42px'}
+                borderRadius={'11px'}
+                bg="#FFFFFF"
+                borderWidth="1" 
+                borderColor="#8A8A8A"
+                shadow="2"
+                p={'7px'}>
+                <Text
+                  fontSize={'16px'}
+                  color="#000000"
+                  textAlign="center"
+                  fontWeight="medium">
+                  Daftar
+                </Text>
+              </Box>
+            </Pressable>
         </ScrollView>
       </Box>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  imageBackground: {
+    flex: 1,
+    // resizeMode: 'cover',
+    justifyContent: 'center',
+    width: '100%',
+    height: '896%',
+  },
+});
 
 export default Login;

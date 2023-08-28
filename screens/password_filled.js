@@ -39,7 +39,7 @@ class PasswordFilled extends Component {
             fontSize={'20px'}
             color="#3E4450"
             textAlign="center"
-            fontWeight="Bold">
+            fontWeight="bold">
             Password Baru
           </Text>
           <Text p={'5px'} fontSize={'12px'} color="#ACACAC" textAlign="center">

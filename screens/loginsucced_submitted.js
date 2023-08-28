@@ -32,7 +32,7 @@ class LoginSucced_Submitted extends Component {
             Kode OTP terverifikasi, Anda berhasil Login!
             </Text>
             <Separator height={'10'} />
-            <Pressable onPress={() => navigation.navigate('FindLocation')}>
+            <Pressable onPress={() => navigation.navigate('FindLocation2')}>
               <Box bg="#F2F8FF" w={'223px'} h={'223px'} borderRadius="full">
                 <Box
                   bg="#DAECFF"
